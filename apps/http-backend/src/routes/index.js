@@ -3,7 +3,10 @@ import express from "express";
 import { middleware } from "../middleware/INDEX.JS";
 const app = express();
 
-app.post("/signUp", (req, res) => {});
+app.post("/signUp", (req, res) => {
+  // db call
+  res.json({ userId: "67" });
+});
 
 app.post("signIn", (req, res) => {
   const userId = 1;
@@ -11,6 +14,12 @@ app.post("signIn", (req, res) => {
   res.json({ token });
 });
 
-app.post("/createRoom", middleware, (req, res) => {});
+app.post("/createRoom", middleware, (req, res) => {
+  // db call
+
+  res.json({
+    roomId: "some-room-id",
+  });
+});
 
 app.listen(3001);
